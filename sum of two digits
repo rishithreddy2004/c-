@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2, sum;
+
+    cout << "Enter first digit: ";
+    cin >> num1;
+
+    cout << "Enter second digit: ";
+    cin >> num2;
+
+    sum = num1 + num2;
+
+    cout << "Sum of the two digits: " << sum << endl;
+
+    return 0;
+}
