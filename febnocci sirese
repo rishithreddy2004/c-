@@ -1,15 +1,16 @@
-#include <iostream>
+#include<iostream>
+using namespace std;
+
 int main() {
-    int n, first = 0, second = 1, next;
-    std::cout << "Enter the number of terms: ";
-    std::cin >> n;
-    std::cout << "Fibonacci sequence: " << first << " " << second << " ";
+    int n = 10; 
+    int first = 0, second = 1, next;
+    cout << "Fibonacci sequence: " << first << " " << second << " ";
     int i = 2;
     while (i < n) {
         next = first + second;
         first = second;
         second = next;
-        std::cout << next << " ";
+        cout << next << " ";
         i++;
     }
     return 0;
