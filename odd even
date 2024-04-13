@@ -2,9 +2,7 @@
 using namespace std;
 
 int main() {
-    int num;
-    cout << "Enter an integer number: ";
-    cin >> num;
+    int num = 10; // replace this value with the desired integer number
     if (num % 2 == 0) {
         cout << num << " is an EVEN number." << endl;
     } else {
