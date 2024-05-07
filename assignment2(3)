@@ -1,0 +1,51 @@
+A person can have various roles and responSibilities at the same time.
+A women plays multiple roles in her life such as a mother, wife, daughter, daughter in law, Sister etc.
+A man behaves as an employee in an office, son or husband at home, Coustomer at a mall etc.
+A mobile is one device but offers various Peatures Solh as camera,radio etc.
+write c++ Program to implement one of the above scenarios using run time Polymorphism.
+answer:
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Person {
+public:
+    virtual void displayDetails() {
+        cout << "This is a person." << endl;
+    }
+};
+
+class Employee : public Person {
+public:
+    void displayDetails() override {
+        cout << "This is an employee." << endl;
+    }
+};
+
+class Son : public Person {
+public:
+    void displayDetails() override {
+        cout << "This is a son." << endl;
+    }
+};
+
+class Customer : public Person {
+public:
+    void displayDetails() override {
+        cout << "This is a customer." << endl;
+    }
+};
+
+int main() {
+    Employee employee;
+    Son son;
+    Customer customer;
+
+    
+    employee.displayDetails();
+    son.displayDetails();
+    customer.displayDetails();
+
+    return 0;
+}
