@@ -1,0 +1,45 @@
+write a program in c++ to find the sum of the series using the constructor overloding.
+in put:9+99+999+9999+ 99999
+Out Put 111105
+answer :
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class SeriesSum {
+private:
+    string series;
+    int sum;
+
+public:
+    SeriesSum() : sum(0) {}
+
+    SeriesSum(string s) : series(s), sum(0) {
+        calculateSum();
+    }
+
+    void calculateSum() {
+        int num = 0;
+        for (char c : series) {
+            if (isdigit(c)) {
+                num = num * 10 + (c - '0');
+            } else {
+                sum += num;
+                num = 0;
+            }
+        }
+        sum += num; // Add the last number in the series
+    }
+
+    int getSum() {
+        return sum;
+    }
+};
+
+int main() {
+    SeriesSum series("9+99+999+9999+99999");
+    cout << "Sum of the series: " << series.getSum() << endl;
+
+    return 0;
+}
