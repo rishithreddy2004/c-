@@ -1,0 +1,23 @@
+Create a class to print an integer and a character using two fonctions having the same name but different sequence of the integer and the character Parametersi
+for example: it the Parameters of the first function are of the form (int n, Charc). then that of the second function will boot the form (charc, int n).
+answer:
+#include <iostream>
+
+class Printer {
+public:
+    void print(int n, char c) {
+        std::cout << "Integer: " << n << ", Character: " << c << std::endl;
+    }
+
+    void print(char c, int n) {
+        std::cout << "Character: " << c << ", Integer: " << n << std::endl;
+    }
+};
+
+int main() {
+    Printer printer;
+    printer.print(5, 'A'); 
+    printer.print('B', 10); 
+
+    return 0;
+}
