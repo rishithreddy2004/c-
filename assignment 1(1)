@@ -22,3 +22,4 @@ int main() {
     DivisibleByNine obj;
     obj.findAndSum();
     return 0;
+}
