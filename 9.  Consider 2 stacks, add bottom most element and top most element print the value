@@ -1,0 +1,56 @@
+
+#include <stdio.h>
+
+#define MAX 100
+
+int stack[MAX];
+int top1 = -1;
+int top2 = MAX;
+
+void push1(int x) {
+    if (top1 < top2 - 1) {
+        stack[++top1] = x;
+    } else {
+        printf("Stack Overflow\n");
+    }
+}
+
+void push2(int x) {
+    if (top1 < top2 - 1) {
+        stack[--top2] = x;
+    } else {
+        printf("Stack Overflow\n");
+    }
+}
+
+int top1Element() {
+    if (top1 >= 0) {
+        return stack[top1];
+    } else {
+        printf("Stack 1 is empty\n");
+        return -1;
+    }
+}
+
+int top2Element() {
+    if (top2 < MAX) {
+        return stack[top2];
+    } else {
+        printf("Stack 2 is empty\n");
+        return -1;
+    }
+}
+
+int main() {
+    push1(1);
+    push1(2);
+    push1(3);
+    push2(4);
+    push2(5);
+    push2(6);
+
+    printf("Top element of stack 1: %d\n", top1Element());
+    printf("Top element of stack 2: %d\n", top2Element());
+
+    return 0;
+}
