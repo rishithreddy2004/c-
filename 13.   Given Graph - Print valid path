@@ -1,0 +1,49 @@
+
+#include <stdio.h>
+
+#define V 5
+
+int graph[V][V] = {
+    {0, 1, 0, 1, 0},
+    {1, 0, 1, 1, 1},
+    {0, 1, 0, 0, 1},
+    {1, 1, 0, 0, 1},
+    {0, 1, 1, 1, 0}
+};
+
+void printPath(int path[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", path[i]);
+    }
+    printf("\n");
+}
+
+void findPathsUtil(int u, int d, int path[], int path_index) {
+    path[path_index] = u;
+    path_index++;
+
+    if (u == d) {
+        printPath(path, path_index);
+    } else {
+        for (int i = 0; i < V; i++) {
+            if (graph[u][i] == 1) {
+                findPathsUtil(i, d, path, path_index);
+            }
+        }
+    }
+}
+
+void findPaths(int s, int d) {
+    int path[V];
+    int path_index = 0;
+
+    findPathsUtil(s, d, path, path_index);
+}
+
+int main() {
+    int source = 0, destination = 4;
+    printf("Paths from %d to %d are:\n", source, destination);
+    findPaths(source, destination);
+
+    return 0;
+}
